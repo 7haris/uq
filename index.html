@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>معلم القرآن | جلد دوم | یونٹ 5</title>
+
+    <!-- Urdu / Arabic Nastaliq Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           GENERAL SETTINGS
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Noto Nastaliq Urdu", "Noto Naskh Arabic", serif;
+            background:
+                radial-gradient(circle at top right, #f7f1df 0%, transparent 30%),
+                radial-gradient(circle at bottom left, #e8efe6 0%, transparent 30%),
+                #f8f5ed;
+            color: #1f352b;
+            line-height: 2;
+        }
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            background:
+                linear-gradient(135deg, rgba(16, 71, 52, 0.97), rgba(27, 98, 72, 0.95)),
+                #124c38;
+            color: white;
+            text-align: center;
+            padding: 55px 20px 45px;
+            border-bottom: 7px solid #caa85e;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before,
+        header::after {
+            content: "❖";
+            position: absolute;
+            font-size: 180px;
+            color: rgba(255, 255, 255, 0.04);
+            top: -70px;
+        }
+
+        header::before {
+            right: 5%;
+        }
+
+        header::after {
+            left: 5%;
+        }
+
+        .main-title {
+            font-size: clamp(42px, 7vw, 78px);
+            margin: 0;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: clamp(20px, 3vw, 32px);
+            margin-top: 10px;
+            color: #f3db9b;
+            position: relative;
+            z-index: 1;
+        }
+
+        .unit-badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 35px;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.10);
+            font-size: 22px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =====================================================
+           MAIN CONTAINER
+        ===================================================== */
+
+        .container {
+            width: min(1200px, 92%);
+            margin: 45px auto;
+        }
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .intro-card {
+            background: rgba(255,255,255,0.8);
+            border: 1px solid #decda5;
+            border-radius: 22px;
+            padding: 25px 35px;
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(38, 67, 51, 0.08);
+            margin-bottom: 35px;
+        }
+
+        .intro-card p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        /* =====================================================
+           SPECIAL BUTTONS
+        ===================================================== */
+
+        .special-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            margin-bottom: 45px;
+        }
+
+        .special-btn {
+            border: none;
+            border-radius: 20px;
+            padding: 22px 20px;
+            cursor: pointer;
+            color: white;
+            font-family: inherit;
+            font-size: 23px;
+            transition: 0.25s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .special-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+        }
+
+        .difficult-btn {
+            background: linear-gradient(135deg, #305b82, #173b5a);
+        }
+
+        .model-btn {
+            background: linear-gradient(135deg, #6b477f, #442a55);
+        }
+
+        /* =====================================================
+           SECTION TITLE
+        ===================================================== */
+
+        .section-heading {
+            text-align: center;
+            margin: 20px 0 30px;
+        }
+
+        .section-heading h2 {
+            display: inline-block;
+            margin: 0;
+            padding: 10px 40px;
+            background: linear-gradient(135deg, #1c684d, #104734);
+            color: #fff;
+            border-radius: 50px;
+            border: 3px solid #d7b96d;
+            font-size: 30px;
+        }
+
+        /* =====================================================
+           LESSON GRID
+        ===================================================== */
+
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 18px;
+        }
+
+        .lesson-card {
+            position: relative;
+            min-height: 145px;
+            border: 1px solid #dfd0ab;
+            background:
+                linear-gradient(145deg, rgba(255,255,255,0.96), rgba(246,241,226,0.96));
+            border-radius: 20px;
+            padding: 28px 15px 18px;
+            cursor: pointer;
+            transition: 0.25s ease;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(40, 66, 49, 0.06);
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-6px);
+            border-color: #b68d37;
+            box-shadow: 0 15px 30px rgba(40, 66, 49, 0.13);
+        }
+
+        .lesson-number {
+            position: absolute;
+            top: -17px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1f694e, #104331);
+            color: #fff;
+            border: 3px solid #e0c37b;
+            border-radius: 50%;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .lesson-name {
+            margin-top: 22px;
+            font-size: 22px;
+            color: #1d3429;
+        }
+
+        .lesson-icon {
+            display: block;
+            font-size: 24px;
+            margin-top: 8px;
+            color: #9b782f;
+        }
+
+        /* =====================================================
+           CONTENT SECTIONS
+        ===================================================== */
+
+        .content-section {
+            display: none;
+            margin-top: 45px;
+            animation: fadeIn 0.35s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chapter-box {
+            background: #fffdf8;
+            border: 1px solid #ddcda6;
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 12px 35px rgba(38, 67, 51, 0.08);
+        }
+
+        .chapter-title {
+            text-align: center;
+            color: #15543d;
+            font-size: 38px;
+            margin-top: 0;
+            border-bottom: 2px solid #d6b96e;
+            padding-bottom: 15px;
+        }
+
+        /* =====================================================
+           CLASSES FOR AI-GENERATED LESSON CONTENT
+           The AI should use these classes.
+        ===================================================== */
+
+        .rule-card {
+            background: linear-gradient(135deg, #eef5ee, #f9f7ef);
+            border-right: 6px solid #1b684d;
+            border-radius: 15px;
+            padding: 20px 25px;
+            margin: 25px 0;
+        }
+
+        .rule-title {
+            font-size: 27px;
+            color: #15513c;
+            margin: 0 0 10px;
+        }
+
+        .rule-explanation {
+            font-size: 19px;
+            color: #333;
+        }
+
+        .section-title {
+            color: #7a5a1f;
+            font-size: 28px;
+            margin-top: 40px;
+            border-bottom: 1px solid #decfa9;
+            padding-bottom: 8px;
+        }
+
+        .word-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .word-table th {
+            background: #195b43;
+            color: white;
+            padding: 13px;
+        }
+
+        .word-table td {
+            padding: 13px;
+            border: 1px solid #e0d4b6;
+            background: #fffdf7;
+        }
+
+        .word-table tr:nth-child(even) td {
+            background: #f5f1e6;
+        }
+
+        .arabic {
+            font-family: "Noto Naskh Arabic", serif;
+            font-size: 24px;
+            direction: rtl;
+        }
+
+        .translation {
+            font-size: 19px;
+        }
+
+        .phrase-card {
+            background: #faf8f0;
+            border: 1px solid #e2d4af;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+
+        .note {
+            background: #fff4cf;
+            border-right: 5px solid #c59831;
+            padding: 18px 22px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        /* =====================================================
+           BACK BUTTON
+        ===================================================== */
+
+        .back-btn {
+            display: block;
+            margin: 35px auto 0;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 50px;
+            background: #195b43;
+            color: white;
+            font-family: inherit;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: #0d392a;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            margin-top: 70px;
+            background: #123f30;
+            color: #f4e4b8;
+            text-align: center;
+            padding: 30px 15px;
+            border-top: 4px solid #caa85e;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 650px) {
+
+            header {
+                padding: 40px 15px 35px;
+            }
+
+            .special-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .lesson-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .lesson-card {
+                min-height: 125px;
+            }
+
+            .lesson-name {
+                font-size: 17px;
+            }
+
+            .chapter-box {
+                padding: 18px;
+            }
+
+            .chapter-title {
+                font-size: 29px;
+            }
+
+            .word-table {
+                font-size: 15px;
+            }
+
+            .word-table th,
+            .word-table td {
+                padding: 8px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+    <h1 class="main-title">معلم القرآن</h1>
+
+    <div class="subtitle">
+        جلد دوم
+    </div>
+
+    <div class="unit-badge">
+        یونٹ 5
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN WEBSITE
+========================================================= -->
+
+<main class="container">
+
+
+    <div class="intro-card">
+
+        <p>
+            اس یونٹ میں شامل 23 اسباق، قواعد، الفاظ کے معانی،
+            تراکیب اور قرآنی عبارات کو آسان اور منظم انداز میں
+            سمجھنے کے لیے کسی بھی سبق پر کلک کریں۔
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SPECIAL SECTIONS
+    ===================================================== -->
+
+    <div class="special-buttons">
+
+        <button class="special-btn difficult-btn"
+                onclick="openSection('difficult-words')">
+            📖 مشکل الفاظ کے معانی
+        </button>
+
+
+        <button class="special-btn model-btn"
+                onclick="openSection('model-paper')">
+            📝 ماڈل پیپر
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LESSON NAVIGATION
+    ===================================================== -->
+
+    <div class="section-heading">
+        <h2>یونٹ 5 کے اسباق</h2>
+    </div>
+
+
+    <div class="lesson-grid">
+
+
+        <!-- LESSON 1 -->
+        <div class="lesson-card" onclick="openSection('lesson-1')">
+            <div class="lesson-number">1</div>
+            <div class="lesson-name">اسم</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 2 -->
+        <div class="lesson-card" onclick="openSection('lesson-2')">
+            <div class="lesson-number">2</div>
+            <div class="lesson-name">بیت</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 3 -->
+        <div class="lesson-card" onclick="openSection('lesson-3')">
+            <div class="lesson-number">3</div>
+            <div class="lesson-name">بیتون</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 4 -->
+        <div class="lesson-card" onclick="openSection('lesson-4')">
+            <div class="lesson-number">4</div>
+            <div class="lesson-name">لَہُ مِنۡ مِّائَةٍ فِئَةٍ</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 5 -->
+        <div class="lesson-card" onclick="openSection('lesson-5')">
+            <div class="lesson-number">5</div>
+            <div class="lesson-name">اَنتَ بَیْتٌ</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 6 -->
+        <div class="lesson-card" onclick="openSection('lesson-6')">
+            <div class="lesson-number">6</div>
+            <div class="lesson-name">بیتہا</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 7 -->
+        <div class="lesson-card" onclick="openSection('lesson-7')">
+            <div class="lesson-number">7</div>
+            <div class="lesson-name">حَتّٰی فِتنَہ</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 8 -->
+        <div class="lesson-card" onclick="openSection('lesson-8')">
+            <div class="lesson-number">8</div>
+            <div class="lesson-name">لَکَ مِنۡ مِّثۡلِکَ فِیۡ بَیۡتِکَ</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 9 -->
+        <div class="lesson-card" onclick="openSection('lesson-9')">
+            <div class="lesson-number">9</div>
+            <div class="lesson-name">فِی بَیْتِکَ</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 10 -->
+        <div class="lesson-card" onclick="openSection('lesson-10')">
+            <div class="lesson-number">10</div>
+            <div class="lesson-name">بَیْتُہُ</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 11 -->
+        <div class="lesson-card" onclick="openSection('lesson-11')">
+            <div class="lesson-number">11</div>
+            <div class="lesson-name">فِی بَیْتِہَا</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 12 -->
+        <div class="lesson-card" onclick="openSection('lesson-12')">
+            <div class="lesson-number">12</div>
+            <div class="lesson-name">بَنِیۡ</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 13 -->
+        <div class="lesson-card" onclick="openSection('lesson-13')">
+            <div class="lesson-number">13</div>
+            <div class="lesson-name">اَیُّہَا النَّبِیُّ</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 14 -->
+        <div class="lesson-card" onclick="openSection('lesson-14')">
+            <div class="lesson-number">14</div>
+            <div class="lesson-name">لَکَ مِنۡ مِّثۡلِہٖ فِیۡ بَیۡتِہَا</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 15 -->
+        <div class="lesson-card" onclick="openSection('lesson-15')">
+            <div class="lesson-number">15</div>
+            <div class="lesson-name">فِی بَیْتِی</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 16 -->
+        <div class="lesson-card" onclick="openSection('lesson-16')">
+            <div class="lesson-number">16</div>
+            <div class="lesson-name">یٰبَنِیۡ آدَمَ</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 17 -->
+        <div class="lesson-card" onclick="openSection('lesson-17')">
+            <div class="lesson-number">17</div>
+            <div class="lesson-name">نَحۡنُ</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 18 -->
+        <div class="lesson-card" onclick="openSection('lesson-18')">
+            <div class="lesson-number">18</div>
+            <div class="lesson-name">مظلوم مذکور منصور</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 19 -->
+        <div class="lesson-card" onclick="openSection('lesson-19')">
+            <div class="lesson-number">19</div>
+            <div class="lesson-name">شَیۡطَانِ سَبِیۡل</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 20 -->
+        <div class="lesson-card" onclick="openSection('lesson-20')">
+            <div class="lesson-number">20</div>
+            <div class="lesson-name">تَرۡکِیۡبِ جُمَل</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 21 -->
+        <div class="lesson-card" onclick="openSection('lesson-21')">
+            <div class="lesson-number">21</div>
+            <div class="lesson-name">حالی مِنۡ خالی</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 22 -->
+        <div class="lesson-card" onclick="openSection('lesson-22')">
+            <div class="lesson-number">22</div>
+            <div class="lesson-name">جِنۡ نَہٖ دیا</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+        <!-- LESSON 23 -->
+        <div class="lesson-card" onclick="openSection('lesson-23')">
+            <div class="lesson-number">23</div>
+            <div class="lesson-name">دِیۡنہٖ و دین</div>
+            <span class="lesson-icon">📖</span>
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LESSON CONTENT STARTS HERE
+         
+         IMPORTANT:
+         DO NOT CHANGE THE WEBSITE STRUCTURE.
+         
+         Later, paste the HTML block generated by AI inside
+         the corresponding chapter-box.
+         
+         Example:
+         
+         Lesson 1 AI code goes inside lesson-1.
+         Lesson 2 AI code goes inside lesson-2.
+         etc.
+    ===================================================== -->
+
+
+
+    <!-- =====================================================
+         LESSON 1 CONTENT
+    ===================================================== -->
+
+    <section id="lesson-1" class="content-section">
+
+        <div class="chapter-box">
+
+            <!--
+            ====================================================
+            PASTE LESSON 1 AI-GENERATED HTML HERE
+
+            AI MUST NOT GIVE:
+            <html>
+            <head>
+            <body>
+            <style>
+            <script>
+
+            ONLY paste the lesson content block here.
+            ====================================================
+            -->
+
+            <h2 class="chapter-title">سبق 1</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">
+            ↑ تمام اسباق کی طرف واپس جائیں
+        </button>
+
+    </section>
+
+
+
+    <!-- LESSON 2 -->
+
+    <section id="lesson-2" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 2 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 2</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">
+            ↑ تمام اسباق کی طرف واپس جائیں
+        </button>
+    </section>
+
+
+
+    <!-- LESSON 3 -->
+
+    <section id="lesson-3" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 3 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 3</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 4 -->
+
+    <section id="lesson-4" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 4 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 4</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 5 -->
+
+    <section id="lesson-5" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 5 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 5</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 6 -->
+
+    <section id="lesson-6" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 6 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 6</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 7 -->
+
+    <section id="lesson-7" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 7 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 7</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 8 -->
+
+    <section id="lesson-8" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 8 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 8</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 9 -->
+
+    <section id="lesson-9" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 9 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 9</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 10 -->
+
+    <section id="lesson-10" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 10 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 10</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 11 -->
+
+    <section id="lesson-11" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 11 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 11</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 12 -->
+
+    <section id="lesson-12" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 12 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 12</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 13 -->
+
+    <section id="lesson-13" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 13 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 13</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 14 -->
+
+    <section id="lesson-14" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 14 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 14</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 15 -->
+
+    <section id="lesson-15" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 15 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 15</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 16 -->
+
+    <section id="lesson-16" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 16 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 16</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 17 -->
+
+    <section id="lesson-17" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 17 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 17</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 18 -->
+
+    <section id="lesson-18" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 18 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 18</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 19 -->
+
+    <section id="lesson-19" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 19 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 19</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 20 -->
+
+    <section id="lesson-20" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 20 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 20</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 21 -->
+
+    <section id="lesson-21" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 21 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 21</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 22 -->
+
+    <section id="lesson-22" class="content-section">
+        <div class="chapter-box">
+
+            <!-- PASTE LESSON 22 AI-GENERATED HTML HERE -->
+
+            <h2 class="chapter-title">سبق 22</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- LESSON 23 -->
+
+    <section id="lesson-23" class="content-section">
+        <div class="chapter-box">
+
+            <!--
+            ====================================================
+            PASTE LESSON 23 AI-GENERATED HTML HERE
+            ====================================================
+            -->
+
+            <h2 class="chapter-title">سبق 23</h2>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">↑ واپس جائیں</button>
+    </section>
+
+
+
+    <!-- =====================================================
+         DIFFICULT WORDS
+    ===================================================== -->
+
+    <section id="difficult-words" class="content-section">
+
+        <div class="chapter-box">
+
+            <!--
+            ====================================================
+            PASTE "مشکل الفاظ کے معانی" CONTENT HERE
+            ====================================================
+            -->
+
+            <h2 class="chapter-title">مشکل الفاظ کے معانی</h2>
+
+            <div class="note">
+                اس حصے کا مواد بعد میں یہاں شامل کیا جائے گا۔
+            </div>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">
+            ↑ واپس جائیں
+        </button>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MODEL PAPER
+    ===================================================== -->
+
+    <section id="model-paper" class="content-section">
+
+        <div class="chapter-box">
+
+            <!--
+            ====================================================
+            PASTE MODEL PAPER CONTENT HERE
+            ====================================================
+            -->
+
+            <h2 class="chapter-title">ماڈل پیپر</h2>
+
+            <div class="note">
+                ماڈل پیپر بعد میں یہاں شامل کیا جائے گا۔
+            </div>
+
+        </div>
+
+        <button class="back-btn" onclick="goHome()">
+            ↑ واپس جائیں
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <p>معلم القرآن | جلد دوم | یونٹ 5</p>
+
+    <p>
+        قرآنِ مجید کو سمجھنے کے سفر میں آسانی پیدا کرنے کی ایک کوشش
+    </p>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     
+     This controls opening and closing lessons.
+     You do not need to change this later.
+========================================================= -->
+
+<script>
+
+    function openSection(sectionId) {
+
+        // Hide all sections
+
+        const sections = document.querySelectorAll('.content-section');
+
+        sections.forEach(function(section) {
+            section.classList.remove('active');
+        });
+
+
+        // Open selected section
+
+        const selectedSection = document.getElementById(sectionId);
+
+        if (selectedSection) {
+
+            selectedSection.classList.add('active');
+
+            selectedSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+        }
+
+    }
+
+
+    function goHome() {
+
+        // Hide all lesson/content sections
+
+        const sections = document.querySelectorAll('.content-section');
+
+        sections.forEach(function(section) {
+            section.classList.remove('active');
+        });
+
+
+        // Go back to lesson navigation
+
+        document.querySelector('.section-heading').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+    }
+
+</script>
+
+
+</body>
+</html>
